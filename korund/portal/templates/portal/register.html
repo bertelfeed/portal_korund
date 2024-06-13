@@ -10,7 +10,7 @@
 <body>
     <div class="login-container">
         <img src="{% static 'portal/images/Logo 1.svg' %}" alt="Корунд">
-        <form action="{% url 'login' %}" method="post">
+        <form action="login" method="post">
             {% csrf_token %}
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required>
@@ -18,7 +18,6 @@
             <input type="password" id="password" name="password" required>
             <button type="submit">Вход</button>
         </form>
-        <a href="{% url 'register' %}">Зарегистрироваться</a>
         {% if error %}
             <p>{{ error }}</p>
         {% endif %}

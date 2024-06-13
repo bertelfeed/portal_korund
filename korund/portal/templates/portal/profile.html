@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - Корунд</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portal/styles.css' %}">
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Личный кабинет</h1>
+        <p>Email: {{ user.email }}</p>
+        <p>Фамилия: {{ user.last_name }}</p>
+        <p>Имя: {{ user.first_name }}</p>
+        <p>Отчество: {{ user.middle_name }}</p>
+        <p>Номер сотрудника: {{ user.employee_number }}</p>
+        <p>Статус работы: {{ user.employment_status }}</p>
+        <p>Роль: {{ user.role }}</p>
+        <p>Дата найма: {{ user.hire_date }}</p>
+        <p>Дата увольнения: {{ user.termination_date }}</p>
+    </div>
+</body>
+</html>

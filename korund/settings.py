@@ -1,9 +1,3 @@
-# Добавьте 'portal' в INSTALLED_APPS
-#INSTALLED_APPS = [
- #   ...
-  #  'portal',
-#]
-
 # Настройки базы данных
 DATABASES = {
     'default': {
