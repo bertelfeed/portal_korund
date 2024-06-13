@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация - Корунд</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portal/styles.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <img src="{% static 'portal/images/Logo 1.svg' %}" alt="Корунд">
+        <form action="login" method="post">
+            <label for="username">Логин</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Пароль</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Вход</button>
+        </form>
+    </div>
+</body>
+</html>
