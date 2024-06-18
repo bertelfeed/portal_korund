@@ -1,0 +1,276 @@
+/* Сброс стилей для всех элементов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Основные настройки для body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Стили для заголовков */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 15px;
+    color: #0056b3;
+}
+
+/* Стили для ссылок */
+a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для контейнера страницы */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Стили для хедера */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0056b3;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+header .logo img {
+    width: 50px; /* Устанавливаем размер логотипа */
+    height: auto;
+}
+
+header .user-info {
+    display: flex;
+    align-items: center;
+}
+
+header .user-info img {
+    width: 40px; /* Устанавливаем фиксированный размер для всех изображений */
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+header .user-info span {
+    font-size: 1.2em;
+}
+
+header .user-info .btn {
+    margin-right: 10px;
+}
+
+/* Стили для навигационного меню */
+nav {
+    display: flex;
+    justify-content: center;
+    background: #003366;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background: #0056b3;
+}
+
+/* Основной контент */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.main-content {
+    flex: 2;
+    padding: 20px;
+}
+
+.sidebar {
+    flex: 1;
+    padding: 20px;
+    background: #f4f4f4;
+    margin-left: 20px;
+}
+
+/* Стили для карточек новостей */
+.news-card {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 15px 0;
+    padding: 20px;
+    transition: transform 0.2s;
+}
+
+.news-card img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.news-card:hover {
+    transform: scale(1.05);
+}
+
+/* Стили для профиля пользователя */
+.profile-container {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.profile-info {
+    margin-left: 20px;
+}
+
+.profile-info img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.profile-info h2 {
+    margin: 10px 0 5px 0;
+}
+
+.profile-info p {
+    margin: 5px 0;
+}
+
+/* Стили для кнопок */
+button, .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #0056b3;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    background: #003366;
+}
+
+/* Стили для подвала */
+footer {
+    background: #0056b3;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Стили для адаптивности */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        margin-left: 0;
+    }
+}
+
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.logo img {
+    width: 300px;
+}
+
+.login-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-form img {
+    width: 150px;
+}
+
+.login-form h2 {
+    margin-top: 0;
+}
+
+.login-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+}

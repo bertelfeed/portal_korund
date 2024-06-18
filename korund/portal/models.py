@@ -26,9 +26,9 @@ class Phone(models.Model):
 class News(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
-    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
+    topic = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True, blank=True)
     photo = models.CharField(max_length=255, blank=True, null=True)
-    employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
+    employee = models.ForeignKey(Employee, on_delete=models.SET_NULL, null=True, blank=True)
     status = models.CharField(max_length=50, default='черновик')
     show_author = models.BooleanField(default=False)
 
@@ -77,7 +77,7 @@ class Event(models.Model):
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
-    participant_list = models.TextField()
+    participant_list = models.TextField(blank=True, null=True)  # Можно использовать JSONField в Django 3.1+
 
 class Project(models.Model):
     project_name = models.CharField(max_length=255)
@@ -85,7 +85,7 @@ class Project(models.Model):
     start_date = models.DateField()
     end_date = models.DateField(blank=True, null=True)
     project_status = models.CharField(max_length=50, default='активный')
-    project_leader = models.ForeignKey(Employee, on_delete=models.CASCADE)
+    project_leader = models.ForeignKey(Employee, on_delete=models.SET_NULL, null=True, blank=True, related_name='led_projects')
 
 class Task(models.Model):
     task_name = models.CharField(max_length=255)
@@ -94,7 +94,7 @@ class Task(models.Model):
     end_date = models.DateField(blank=True, null=True)
     task_status = models.CharField(max_length=50, default='в процессе')
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    assignee = models.ForeignKey(Employee, on_delete=models.CASCADE)
+    assignee = models.ForeignKey(Employee, on_delete=models.SET_NULL, null=True, blank=True, related_name='tasks')
 
 class DocumentArchive(models.Model):
     document_name = models.CharField(max_length=255)

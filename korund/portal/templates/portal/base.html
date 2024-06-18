@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Корунд{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'portal/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'portal/images/Logo 1.svg' %}" alt="Корунд">
+        </div>
+        <div class="user-info">
+            {% if user.is_authenticated %}
+                <img src="{{ user.photo }}" alt="User">
+                <span>{{ user.get_full_name }}</span>
+            {% else %}
+                <button class="btn" onclick="window.location.href='{% url 'login' %}'">Войти</button>
+                <button class="btn" onclick="window.location.href='{% url 'register' %}'">Зарегистрироваться</button>
+            {% endif %}
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'index' %}">Главная страница</a></li>
+            <li><a href="{% url 'profile' %}">Личный кабинет</a></li>
+            <li><a href="{% url 'dialog_list' %}">Мессенджер</a></li>
+            
+            <li><a href="{% url 'employee_list' %}">Сотрудники</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Корунд</p>
+        <p><a href="mailto:info@korund-s.ru">info@korund-s.ru</a></p>
+    </footer>
+</body>
+</html>

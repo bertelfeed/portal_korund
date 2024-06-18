@@ -1,0 +1,17 @@
+{% extends 'portal/base.html' %}
+
+{% block title %}Список диалогов{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Мессенджер</h1>
+    <div class="dialog-list">
+        {% for chat in chats %}
+            <div class="dialog-item">
+                <h2><a href="{% url 'dialog_detail' chat.id %}">{{ chat.chat_name }}</a></h2>
+                <p>Участники: {{ chat.participants.all|join:", " }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

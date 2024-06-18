@@ -1,0 +1,18 @@
+{% extends 'portal/base.html' %}
+
+{% block title %}Сотрудники{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Сотрудники</h1>
+    <div class="employee-list">
+        {% for employee in employees %}
+            <div class="employee-item">
+                <img src="{{ employee.photo }}" alt="{{ employee.get_full_name }}">
+                <h2>{{ employee.get_full_name }}</h2>
+                <p>{{ employee.role }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

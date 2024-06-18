@@ -1,37 +1,17 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Корпоративный портал Корунд</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'portal/styles.css' %}">
-</head>
-<body>
-    <header>
-        <img src="{% static 'portal/images/Logo 1.svg' %}" alt="Корунд">
-        <span>Имя пользователя</span>
-        <a href="{% url 'profile' %}">Личный кабинет</a> <!-- Кнопка для перехода в личный кабинет -->
-    </header>
-    <main>
-        <nav class="sidebar">
-            <ul>
-                <li>Меню</li>
-                <!-- Добавьте пункты меню здесь -->
-            </ul>
-        </nav>
-        <section class="main-content">
-            <div class="news-image">
-                <img src="{% static 'portal/images/your_news_image.svg' %}" alt="Новость">
+{% extends 'portal/base.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Новости</h1>
+    <div class="news-list">
+        {% for news in news_list %}
+            <div class="news-item">
+                <h2>{{ news.title }}</h2>
+                <p>{{ news.description }}</p>
             </div>
-            <div class="news-description">
-                <p>Описание</p>
-            </div>
-        </section>
-        <aside class="calendar">
-            <h2>Календарь</h2>
-            <!-- Добавьте календарь здесь -->
-        </aside>
-    </main>
-</body>
-</html>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

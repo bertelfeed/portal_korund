@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Зарегистрироваться</title>
+    <title>Войти</title>
     <link rel="stylesheet" href="{% static 'portal/css/styles.css' %}">
 </head>
 <body>
@@ -14,24 +14,20 @@
         </div>
         <div class="login-form">
             <img src="{% static 'portal/images/Logo full.svg' %}" alt="Корунд">
-            <h2>Регистрация</h2>
-            <form method="post" action="{% url 'register' %}">
+            <h2>Добро пожаловать</h2>
+            <form method="post" action="{% url 'login' %}">
                 {% csrf_token %}
                 <label for="username">Логин</label>
                 <input type="text" id="username" name="username" required>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
                 <label for="password">Пароль</label>
                 <input type="password" id="password" name="password" required>
-                <label for="confirm_password">Подтвердите пароль</label>
-                <input type="password" id="confirm_password" name="confirm_password" required>
-                <button type="submit">Регистрация</button>
+                <button type="submit">Вход</button>
             </form>
             {% if error_message %}
                 <p class="error">{{ error_message }}</p>
             {% endif %}
-            <p>Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a></p>
-        </div>
+            <p>Нет аккаунта? <a href="{% url 'register' %}">Зарегистрироваться</a></p>
+       </div>
     </div>
 </body>
 </html>

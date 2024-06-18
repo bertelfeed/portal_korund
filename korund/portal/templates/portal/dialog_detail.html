@@ -1,0 +1,23 @@
+{% extends 'portal/base.html' %}
+
+{% block title %}Диалог{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ chat.chat_name }}</h1>
+    <div class="messages">
+        {% for message in messages %}
+            <div class="message">
+                <strong>{{ message.employee.get_full_name }}</strong>
+                <p>{{ message.message_content }}</p>
+                <span>{{ message.send_time }}</span>
+            </div>
+        {% endfor %}
+    </div>
+    <form method="post" action="{% url 'dialog_detail' chat.id %}">
+        {% csrf_token %}
+        <textarea name="message_content" placeholder="Введите сообщение..."></textarea>
+        <button type="submit">Отправить</button>
+    </form>
+</div>
+{% endblock %}

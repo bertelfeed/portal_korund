@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ dialog.title }}</title>
+</head>
+<body>
+    <h2>{{ dialog.title }}</h2>
+    <div>
+        {% for message in dialog.messages %}
+        <p>{{ message.sender }}: {{ message.text }}</p>
+        {% endfor %}
+    </div>
+    <a href="{% url 'dialog_list' %}">Назад к списку диалогов</a>
+</body>
+</html>
