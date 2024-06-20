@@ -1,0 +1,190 @@
+/* Сброс стилей для всех элементов НАДО ЛИ? это альберт прописывал, у индуса нет такого*/ 
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+/* Основные настройки для body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: rgb(156,177,255);
+    background: linear-gradient(0deg, rgba(156,177,255,1) 0%, rgba(193,245,255,1) 43%, rgba(254,254,254,1) 100%);
+}
+
+.container { /* колонки */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* центрирует дочерние элементы по вертикали */
+    min-height: 100vh; /* устанавливает минимальную высоту родительского элемента равной высоте экрана РАБОТАЕТ ЛИ?*/
+}
+
+.box-sign-in { /* плитка основная */
+    border: thin; /* граница 1px,  */
+    border-radius: 45px;
+    background: rgba(255, 255, 255, 0.4);
+    /* backdrop-filter: blur(20px); */
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    width: 930px;
+}
+
+.left-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* flex-column */
+     /* rounded-4 */
+     
+    /* .logo img { корумбек маскот 
+        width: 300px;
+    } */
+    /* col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #blue; */
+}
+
+.right-box {
+    border: thin; /* граница 1px,  */
+    border-radius: 45px;
+    background-color: white;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    padding: 40px 30px 40px 40px;
+}
+
+::placeholder{
+    font-size: 16px;
+}
+
+
+
+
+/* пока не смотрела */
+/* Стили для заголовков */
+/* h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 15px;
+    color: #0056b3;
+} */
+
+/* Стили для ссылок */
+/* a {
+    color: #0056b3;
+    text-decoration: none;
+} */
+
+/* a:hover {
+    text-decoration: underline;
+} */
+
+/* Стили для контейнера страницы */
+/* .container {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+} */
+
+
+
+
+/* Основной контент */
+/* main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+} */
+
+/* .main-content {
+    flex: 2;
+    padding: 20px;
+}
+ */
+/* .sidebar {
+    flex: 1;
+    padding: 20px;
+    background: #f4f4f4;
+    margin-left: 20px;
+}
+ */
+
+
+/* Стили для кнопок */
+/* button, .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #0056b3;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+} */
+
+/* button:hover, .btn:hover {
+    background: #003366;
+} */
+
+
+
+/* Стили для адаптивности */ /* есть у индуса для авторизации, сейчас код альберта*/
+/* @media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        margin-left: 0;
+    }
+} */
+
+/* styles.css */
+
+
+
+/* .login-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+} */
+
+/* .login-form img {
+    width: 150px;
+} */
+
+/* .login-form h2 {
+    margin-top: 0;
+} */
+
+/* .login-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+} */
+/* при наведении на кнопку в форме авторизации */
+/* .login-form button:hover { 
+    background-color: #0056b3;
+} */
+
+/* .error {
+    color: red;
+} */
