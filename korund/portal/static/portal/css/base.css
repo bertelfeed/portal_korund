@@ -1,3 +1,55 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(156,177,255);
+    background: linear-gradient(0deg, rgba(156,177,255,1) 0%, rgba(193,245,255,1) 43%, rgba(254,254,254,1) 100%);
+}
+
+
+/* .sticky-sidebar {
+    position: sticky;
+    top: 0;
+    height: auto;
+}
+.news-item {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+} */
+
+
+
+/*  .main-container {    
+    padding: 45px, 0, 45px, 0;
+ 
+} */
+
+
+/* .row {
+
+    width: 930px;
+} */
+
+/* .sidebar {
+    background-color: blueviolet;
+
+}
+
+.main-box {
+    background-color: rgb(226, 43, 95);
+}
+
+.calendar {
+    background-color: rgb(226, 150, 43)
+} */
+
+/* .container { 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh; 
+} */
+
 /* Сброс стилей для всех элементов */
 /* * {
     margin: 0;
@@ -12,6 +64,8 @@
     color: #333;
     line-height: 1.6;
 } */
+
+
 
 /* Стили для заголовков */
 /* h1, h2, h3, h4, h5, h6 {
@@ -62,12 +116,12 @@
     border-radius: 50%;
     margin-right: 10px;
 }
- */
-/* header .user-info span {
-    font-size: 1.2em;
-} */
 
-/* header .user-info .btn {
+header .user-info span {
+    font-size: 1.2em;
+}
+
+header .user-info .btn {
     margin-right: 10px;
 } */
 
@@ -77,24 +131,24 @@
     justify-content: center;
     background: #003366;
     padding: 10px 0;
-} */
+}
 
-/* nav ul {
+nav ul {
     list-style: none;
-} */
+}
 
-/* nav ul li {
+nav ul li {
     display: inline;
     margin-right: 10px;
-} */
+}
 
-/* nav ul li a {
+nav ul li a {
     color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
-} */
+}
 
-/* nav ul li a:hover {
+nav ul li a:hover {
     background: #0056b3;
 } */
 
@@ -103,9 +157,9 @@
     display: flex;
     flex-wrap: wrap;
     margin: 20px 0;
-} */
+}
 
-/* .main-content {
+.main-content {
     flex: 2;
     padding: 20px;
 }
@@ -115,8 +169,8 @@
     padding: 20px;
     background: #f4f4f4;
     margin-left: 20px;
-} */
-
+}
+ */
 /* Стили для карточек новостей */
 /* .news-card {
     background: #fff;
@@ -136,30 +190,7 @@
     transform: scale(1.05);
 } */
 
-/* Стили для профиля пользователя */
-/* .profile-container {
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
-}
 
-.profile-info {
-    margin-left: 20px;
-}
-
-.profile-info img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-}
-
-.profile-info h2 {
-    margin: 10px 0 5px 0;
-}
-
-.profile-info p {
-    margin: 5px 0;
-} */
 
 /* Стили для кнопок */
 /* button, .btn {
@@ -217,61 +248,17 @@ footer p {
     padding: 0;
 }
 
-.login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+
 
 .logo img {
     width: 300px;
 }
 
-.login-form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
 
-.login-form img {
-    width: 150px;
-}
-
-.login-form h2 {
-    margin-top: 0;
-}
-
-.login-form label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-.login-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.login-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.login-form button:hover {
-    background-color: #0056b3;
-}
 
 .error {
     color: red;
 }
  */
+
+ 
