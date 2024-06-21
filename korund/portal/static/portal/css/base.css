@@ -1,264 +1,180 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: rgb(156,177,255);
-    background: linear-gradient(0deg, rgba(156,177,255,1) 0%, rgba(193,245,255,1) 43%, rgba(254,254,254,1) 100%);
-}
-
-
-/* .sticky-sidebar {
-    position: sticky;
-    top: 0;
-    height: auto;
-}
-.news-item {
-    border: 1px solid #dee2e6;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #f8f9fa;
-} */
-
-
-
-/*  .main-container {    
-    padding: 45px, 0, 45px, 0;
- 
-} */
-
-
-/* .row {
-
-    width: 930px;
-} */
-
-/* .sidebar {
-    background-color: blueviolet;
-
-}
-
-.main-box {
-    background-color: rgb(226, 43, 95);
-}
-
-.calendar {
-    background-color: rgb(226, 150, 43)
-} */
-
-/* .container { 
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    min-height: 100vh; 
-} */
-
-/* Сброс стилей для всех элементов */
-/* * {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} */
-
-/* Основные настройки для body */
-/* body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f8ff;
-    color: #333;
-    line-height: 1.6;
-} */
-
-
-
-/* Стили для заголовков */
-/* h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 15px;
-    color: #0056b3;
-} */
-
-/* Стили для ссылок */
-/* a {
-    color: #0056b3;
     text-decoration: none;
-} */
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Lato', sans-serif; */
+}
+body {
+    /* font-family: 'Roboto', sans-serif; */
+    background-color: rgb(156,177,255);
+    background: linear-gradient(0deg, rgba(156,177,255,1) 0%, rgba(193,245,255,1) 43%, rgba(254,254,254,1) 100%);
+}
+/* Для настройки меню, Н */
+ #insidenav{
+    border-radius: 25px;
+    border:none;
+    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+    background: #ffffff;
+} 
+/* #sidenav{
+background: #42c362; 
+}
+/* конец */
 
-/* a:hover {
-    text-decoration: underline;
-} */
 
-/* Стили для контейнера страницы */
-/* .container {
-    width: 90%;
-    margin: 0 auto;
-    overflow: hidden;
-} */
-
-/* Стили для хедера */
-/* header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #0056b3;
-    color: #fff;
-    padding: 10px 20px;
-} */
-/* Устанавливаем размер логотипа */
-/* header .logo img {
-    width: 50px; 
-    height: auto;
-} */
-
-/* header .user-info {
-    display: flex;
-    align-items: center;
-} */
-/* Устанавливаем фиксированный размер для всех изображений */
-/* header .user-info img {
-    width: 40px; 
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
+/* Header */
+#navbar{
+    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+    background: #ffffff;
+    
+    
 }
 
-header .user-info span {
-    font-size: 1.2em;
+#logo{
+    font-size: 36px;
+    font-weight: 550;
+    color: black;
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 5px;
 }
 
-header .user-info .btn {
-    margin-right: 10px;
-} */
+#logo span{
+    color: #ffa500;
+}
+.navbar-toggler span{ /* иконка бургер*/
+    color: #000000;
+}
+.navbar-nav{
+  /*  margin-left: 20px; мешает в меню, где-то еще надо?*/
+}
+.nav-item .nav-link{
+    font-size: 16px;
+    font-weight: 550;
+    color: black;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: 0.5s ease;
+}
+.nav-item .nav-link:hover{
+    background: #ffa500;
+    color: white;
+}
 
-/* Стили для навигационного меню */
-/* nav {
+
+
+
+.news-area .card{
+    border-radius: 25px;
+    border:none;
+    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+    
+}
+
+/* или цвет границы */
+/* .news-area .card:hover{
+    background-color: #c34242;
+} */
+.news-area .card img{
+    border-radius: 25px;
+}
+.news-area .card .card-body{
+    background: transparent; 
+}
+/* .news-area .card .card-body h3{
+    font-size: 16px;
+    font-weight: 600;
+} */
+.news-area .card .card-body p{
+    font-size: 16px;
+}
+.news-area .card .card-body span{
+    font-size: 12px;
+    color: rgb(35, 35, 35);
+}
+
+/* .news-area .card .card-body h6{
+    font-size: 20px;
+} */
+/* .news-area .card .card-body a{
+    padding: 10px;
+    text-decoration: none;
+    background: #ffa500;
+    color: white;
+    border-radius: 5px;
+} */
+/*  @media (min-width:768) {
+    .news-one {
+    width: 20% !important;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    }
+
+ } */
+
+.new-thumb a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+.new-thumb img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+/* Для календарь, Олеся добавила */
+#calendar-card {
+    border-radius: 25px;
+    border:none;
+    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+    
+
+}
+
+.icon-container {
     display: flex;
     justify-content: center;
-    background: #003366;
-    padding: 10px 0;
+    align-items: center;
+    background-color: #79a6f0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
 }
 
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 10px;
-}
-
-nav ul li a {
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-nav ul li a:hover {
-    background: #0056b3;
-} */
-
-/* Основной контент */
-/* main {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px 0;
-}
-
-.main-content {
-    flex: 2;
-    padding: 20px;
-}
-
-.sidebar {
-    flex: 1;
-    padding: 20px;
-    background: #f4f4f4;
-    margin-left: 20px;
-}
- */
-/* Стили для карточек новостей */
-/* .news-card {
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin: 15px 0;
-    padding: 20px;
-    transition: transform 0.2s;
-}
-
-.news-card img {
-    width: 100%;
-    border-radius: 5px 5px 0 0;
-}
-
-.news-card:hover {
-    transform: scale(1.05);
-} */
-
-
-
-/* Стили для кнопок */
-/* button, .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background: #0056b3;
-    color: #fff;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-button:hover, .btn:hover {
-    background: #003366;
-} */
-
-/* Стили для подвала */
-/* footer {
-    background: #0056b3;
-    color: #fff;
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
     text-align: center;
-    padding: 20px 0;
-    position: fixed;
+}
+
+
+#footer{
     width: 100%;
-    bottom: 0;
+    text-align: center;
+    background: #f9f9f9;
+    margin-top: 150px;
 }
-
-footer p {
-    margin: 5px 0;
-} */
-
-/* Стили для адаптивности */
-/* @media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    main {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        margin-left: 0;
-    }
+/*  .social-links i{
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 20px;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+    margin-bottom: 10px;
+    transition: 0.5s ease;
+    cursor: pointer;
 }
- */
-/* styles.css */
-
-/* body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f4f8;
-    margin: 0;
-    padding: 0;
-}
-
-
-
-.logo img {
-    width: 300px;
-}
-
-
-
-.error {
-    color: red;
-}
- */
-
- 
+.social-links i:hover{
+    background: #ffa500;
+}   */
