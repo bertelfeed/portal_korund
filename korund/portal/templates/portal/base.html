@@ -16,239 +16,138 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!-- <script src="https://kit.fontawesome.com/d6b9e7e640.js" crossorigin="anonymous"></script> -->
 </head>
-    <!-- АЛЬБЕРТ -->
-    <!-- <header>
-      <div class="logo">
-          <img src="{% static 'portal/images/Logo 1.svg' %}" alt="Корунд">
-      </div>
-      <div class="user-info">
-          {% if user.is_authenticated %}
-              <img src="{{ user.photo }}" alt="User">
-              <span>{{ user.get_full_name }}</span>
-          {% else %}
-              <button class="btn" onclick="window.location.href='{% url 'login' %}'">Войти</button>
-              <button class="btn" onclick="window.location.href='{% url 'register' %}'">Зарегистрироваться</button>
-          {% endif %}
-      </div>
-  </header>
-  <nav>
-      <ul>
-          <li><a href="{% url 'index' %}">Главная страница</a></li>
-          <li><a href="{% url 'profile' %}">Личный кабинет</a></li>
-          <li><a href="{% url 'dialog_list' %}">Мессенджер</a></li>
-          
-          <li><a href="{% url 'employee_list' %}">Сотрудники</a></li>
-      </ul>
-  </nav> -->
-     <!-- АЛЬБЕРТ -->
-    <!-- НАСТЯ -->
-      <!-- <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #ffffff;">
-        <div class="container">
-            <a class="navbar-brand me-auto" aria-current="page" href="{%url 'profile' %}"> 
-                <img src="{% static 'portal/images/logofull.svg' %}" alt="logo" width="285" height="67,5">
-            </a>
-
-            <div class="navbar-nav ms-auto">
-              <img src="{{ user.photo }}" alt="User">
-              <span>{{ user.get_full_name }}</span>
-              <a class="nav-link active" aria-current="page" href="{% url 'profile' %}">Личный кабинет</a>
-            </div>
-          
-           <div class="border border-black  ">
-            Left aligned text on all viewport sizes.
-            </div>
-              
-        </div>
-    </nav>  -->
-    <!-- НАСТЯ -->
+    
     
 <body>
-  
-    <!-- NAVBAR START --> 
-    <header>
-        <nav class="navbar navbar-expand-sm" id="navbar">
-        <div class="container" style="background-color: #e00d0d53;">
-          <a class="navbar-brand" href="{%url 'profile' %}" id="logo"> 
-            <img src="{% static 'portal/images/logofull.svg' %}" alt="logo" width="285" height="67,5"> 
-          </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-                  <span><i class="fa-solid fa-bars"></i></span>
-                </button>
-                <div class="collapse navbar-collapse" id="mynavbar">
-
-                  <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                      <!-- пробник -->
-                      
-                      <a class="nav-link" href="{%url 'login' %}"> <!-- выставить перенос на профиль -->
-                        
-                        <div class="d-flex align-items-center">
-
-                          <div class="UserID-Badge me-2">
-                            <div class="UserID-Avatar UserID-Avatar_plus">
-                              <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="UserID-Avatar-Image rounded-circle" style="width: 40px;" alt="Avatar" >
-                            </div>
-                          </div>
-                          <span class="UserID-name">Имя пользователя</span>
-
-                        </div>
-                      
-
-                      </a>
-                    </li>
-                  </ul>
-                  
-                </div>
-              </div>
-            </nav>   
-    </header>
-    <!-- NAVBAR END -->
-
-    
-    <!--CONTENT AREA START -->
-    <section class="main-area" id="main-area">
-      <div class="container" style="background-color: brown;">
-        <div class="row" style="margin-top: 30px;"><!-- Строка контента страницы -->
-
-          <div class="col-md-3 py-3 py-md-0"><!-- Колонки меню для малых (свор при 567пк) размеров экрана?, padding top bottom,  -->
-            
-              <!-- Меню -->
-              <nav class="nav navbar-nav vh-100" id="sidenav">
-                <ul class="nav d-flex flex-column nav-pills h-75 border py-3 px-3" id="insidenav">
-                  <li class="sidenav-item">
-                  <a class="nav-link active" aria-current="page" href="#" >
-                    <i class="fa fa-home" aria-hidden="true"></i>
-                    <span> Главная страница </span>
-                  </a>
-                  </li>
-
-                  <li class="sidenav-item">
-                    <a class="nav-link" href="#" ><!-- Добавть ссылку на личный каб -->
-                      <i class="fa fa-user" aria-hidden="true"></i>
-                      <span> Личный кабинет </span>
-                    </a>
-                  </li>
-
-                  <li class="sidenav-item">
-                    <a class="nav-link" href="{% url 'dialog_list' %}">
-                      <i class="fa fa-comment" aria-hidden="true"></i>
-                      <span> Мессенджер</span>
-                    </a>
-                  </li>
-                  
-                  <li class="sidenav-item">
-                    <a class="nav-link" href="#" ><!-- Если будет страница календаря или вызов просто добавть -->
-                      <i class="fa fa-calendar" aria-hidden="true"></i>
-                      <span> Календарь </span>
-                    </a>
-                  </li>
-
-                  <li class="sidenav-item">
-                    <a class="nav-link" href="{% url 'employee_list' %}" >
-                      <i class="fa fa-users" aria-hidden="true"></i>
-                      <span> Сотрудники </span>
-                    </a>
-                  </li>
-
-                  <li class="sidenav-item mt-auto">
-                    <a class="nav-link" href="#" ><!-- куда попадет пользователь после выхода, добавить -->
-                      <i class="fa fa-sign-out" aria-hidden="true"></i>
-                      <span> Выйти </span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-
-              <!--  Фаблоны для создания меню, потом удалю 
-               <li class="nav-item">
-                <a class="nav-link active" href="#" aria-current="page"
-                  >Active link</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled link</a>
-              </li>
-              </ul>
-              <ul
-              class="nav nav-tabs  "
-              >
-              <li class="nav-item">
-                <a href="#" class="nav-link active" aria-current="page"
-                  >Active</a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">Link</a>
-              </li>
-              <li class="nav-item disabled">
-                <a href="#" class="nav-link">Disabled</a>
-              </li>
-              </ul>
-              <nav class="navbar navbar-expand navbar-light bg-light">
-              <ul class="nav navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#" aria-current="page"
-                    >Nav 1 <span class="visually-hidden">(current)</span></a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Nav 2</a>
-                </li>
-              </ul>
-              </nav> -->
-             
-          </div><!-- Конец колонкименю -->
-
-
-          <!-- НОВОСТНОЙ БЛОК -->
-          <div class="col-md-8 py-3 py-md-0">
-            <section class="news-area" id="news-area">
-              <div class="container" style="background-color: rgb(255, 196, 0);">
-
-                <!----------------------- большая новость --------------------------->
-                <div class="row">
-                  <div class="col-md-12 py-3 py-md-0">
-                    <div class="card" style="background-color: #9BC4F4;">
-                      <img src="{% static 'portal/images/mascot/Корумбек.png' %}" alt="">
-                    </div>
-
+  <!-- HEADER LASTVER, N.  нужно ли поставить медиа штуки? --> 
+  <header>
+    <nav class="navbar navbar-expand-sm" id="navbar">
+    <div class="container">
+      <div class="logo col-3 ">
+        <a class="navbar-brand d-flex justify-content-center" href="{%url 'index' %}" id="logo"> 
+          <img src="{% static 'portal/images/logofull.svg' %}" alt="logo" style=" width: 175px; height: auto; display: block;"> 
+          <!-- max-width: 175px;   min-width: 150px; -->
+        </a>
+      </div>
+      <div class="user col-3 d-flex justify-content-center">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'profile' %}"> 
+              <div class="d-flex align-items-center">
+                <div class="UserID-Badge me-2">
+                  <div class="UserID-Avatar UserID-Avatar_plus"><!-- Фото и имя пользоватлея из бд -->
+                    <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="UserID-Avatar-Image rounded-circle" style="width: 45px;" alt="Avatar" >
                   </div>
                 </div>
+                <span class="UserID-name">Имя пользователя</span>
+              </div>
+            </a>
+          </li>
+        </ul> 
+      </div>   
+    </div>
+    </nav>   
+  </header>
+  <!-- HEADER END -->
+ 
+  <!--CONTENT AREA START -->
+  <section class="main-area" id="main-area">
+    <div class="container" >
+      <div class="row" style="margin-top: 30px;"><!-- Строка контента страницы -->
+
+        <div class="col-md-3 py-3 py-md-0" id="sidenav">
+          <!-- МУЧАЕМ МЕНЮЮЮЮЮЮЮ / почтиГОТОВО (специфично для этой страницы, Н)-->
+          <nav class="nav flex-column py-3 px-3" style="background-color: white; border-radius: 25px;">
+
+            <ul class="nav d-flex flex flex-column h-100">
+                <li class="sidenav-item">
+                    <a class="nav-link active" style="background-color:#79a6f0; border-radius:25px; color:black" aria-current="page" href="#">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <span> Главная страница </span>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="nav-link" href="{% url 'profile' %}">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span> Личный кабинет </span>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="nav-link" href="{% url 'dialog_list' %}">
+                        <i class="fa fa-comment" aria-hidden="true"></i>
+                        <span> Мессенджер </span><!-- Страница в отключке -->
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <span> Календарь </span><!-- Доделать -->
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="nav-link" href="{% url 'employee_list' %}">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <span> Сотрудники </span>
+                    </a>
+                </li>
+                <li class="sidenav-item mt-auto" id="sign-out-element">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        <span> Выйти </span><!-- Добавить переход туда, куда выходим -->
+                    </a>
+                </li>
+            </ul>
+          </nav>
+        </div>
+          
+          
+
+
+        <!-- НОВОСТНОЙ БЛОК -->
+        <div class="col-md-8 py-3 py-md-0">
+          <section class="news-area" id="news-area">
+            <div class="container" style="background-color: rgb(255, 196, 0);">
+
+              <!----------------------- большая новость --------------------------->
+              <div class="row" style="height: 250px;">
+                  <div class="col-md-12 py-3 py-md-0">
+                    
+                    <div class="card h-100" style="background-color: #9BC4F4;">
+                      <img src="C:\Users\olesy\Downloads\photo.jpg" alt=""><!-- Фото из бд -->
+                    </div>
+                  </div>
+              </div>
                 
 
-                <!----------------------- маленькие новости --------------------------->
-                <div class="row" style="margin-top: 30px;">
+                <!-- --------------------- маленькие новости ------------------------- -->  <!-- Фото и текст, дата из бд -->
+              <div class="row" style="margin-top: 30px;">
 
-                  <div class="col-md-4 py-3 py-md-0 news-one">
-                    <div class="card">
-                      <img  src="{% static 'portal/images/mascot/Корумбек.png' %}" alt="">
+                <div class="col-md-6 py-3 py-md-0 news-one">
+                  <div class="card px-3 pt-3">
+                      <img  src="https://plus.unsplash.com/premium_photo-1661580998017-8e6a23c1d60e?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                       <div class="card-body">
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, doloribus!</p>
                         <span>17 июня</span>
                       </div>
-
-                    </div>
                   </div>
+                </div>
 
 
 
 
 
-                  <div class="col-md-4 py-3 py-md-0 news-one">
-                    <div class="card">
-                      <img src="{% static 'portal/images/mascot/Корумбек.png' %}" alt="">
+                <div class="col-md-6 py-3 py-md-0 news-one">
+                  <div class="card px-3 pt-3">
+                      <img src="https://images.unsplash.com/photo-1598449356475-b9f71db7d847?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                       <div class="card-body">
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, doloribus!</p>
                         <span>16 июня</span>
                       </div>
 
-                    </div>
                   </div>
+                </div>
 
-                  <div class="col-md-4 py-3 py-md-0 news-one">
+                <!-- <div class="col-md-4 py-3 py-md-0 news-one">
                     <div class="card">
                       <img src="{% static 'portal/images/mascot/Корумбек.png' %}" alt="">
                       <div class="card-body">
@@ -257,23 +156,18 @@
                       </div>
 
                     </div>
-                  </div>
-                
                 </div>
+                 -->
+              </div>
 
-               <!--  <li class="sidenav-item">
-                  <a class="nav-link" href="#" ><!-- Если будет страница календаря или вызов просто добавть
-                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                    <span> Календарь </span>
-                  </a>
-                </li> -->
+            
                 
-                <div class="row" style="margin-top: 30px;">
-                  <div class="col-md-4 py-3 py-md-0 news-one">
-                    <li class="card">
+              <div class="row" style="margin-top: 30px;">
+                <div class="col-md-4 py-3 py-md-0 news-one">
+                    <li class="card px-3 pt-3">
                       <div class="new-thumb">
-                        <a href="#"><img src="{% static 'portal/images/mascot/site.png' %}" alt=""> </a>
-                       </div>
+                        <a href="#"><img src="https://plus.unsplash.com/premium_photo-1661580998017-8e6a23c1d60e?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""> </a>
+                      </div>
                         <div class="card-body">
                           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, doloribus!</p>
                           <span>14 июня</span>
@@ -281,121 +175,96 @@
                     </li>
                 </div>
 
-                  <div class="col-md-4 py-3 py-md-0 news-one">
-                    <div class="card">
-                      <img src="{% static 'portal/images/mascot/Корумбек.png' %}" alt="">
+                <div class="col-md-4 py-3 py-md-0 news-one">
+                  <div class="card px-3 pt-3">
+                      <img src="https://plus.unsplash.com/premium_photo-1661580998017-8e6a23c1d60e?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                       <div class="card-body">
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, doloribus!</p>
                         <span>13 июня</span>
 
                       </div>
 
-                    </div>
                   </div>
+                </div>
 
-                  <div class="col-md-4 py-3 py-md-0 news-one">
-                    <div class="card">
-                      <img src="{% static 'portal/images/mascot/Корумбек.png' %}" alt="">
+                <div class="col-md-4 py-3 py-md-0 news-one">
+                  <div class="card px-3 pt-3">
+                      <img src="https://plus.unsplash.com/premium_photo-1661580998017-8e6a23c1d60e?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                       <div class="card-body">
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, doloribus!</p>
                         <span>12 июня</span>
 
                       </div>
 
-                    </div>
                   </div>
+                </div>
                 
                   
-                </div>
-              </div>
-            </section>
-          </div>
-
-
-          <!----- КАЛЕНДАРЬ -----> <!-- круг выезжает за границы карточки -->
-          <div class="col-md-1 py-3 py-md-0">
-            <div class="card" id="calendar-card">
-              <div class="card-body px-0 d-flex flex-column justify-content-center align-items-center">
-                <div class="icon-container">
-                  <i class="fa fa-calendar"></i>
-                </div>
-                <span class="vertical-text">Календарь</span>
-              </div>
               </div>
             </div>
+          </section>
+        </div>
+
+
+        <!----- КАЛЕНДАРЬ -----> <!-- круг выезжает за границы карточки -->
+        <div class="col-md-1 py-3 py-md-0">
+          <div class="card" id="calendar-card">
+            <div class="card-body px-0 d-flex flex-column justify-content-center align-items-center">
+              <div class="icon-container">
+                <i class="fa fa-calendar"></i>
+              </div>
+              <span class="vertical-text">Календарь</span>
+              
+            </div>
           </div>
-
-
         </div>
+
+
       </div>
-    </section>
-      
-    
-    
-    
+    </div>
+  </section>
+  <!--CONTENT AREA END -->
 
-
-
-    
-  
-    
-    
-
-
-
-    
-    
+  <footer id="footer">
+    <div class="container ">
+      <div class="row d-flex align-items-center">
         
-    <!--CONTENT AREA END -->
-    
-
-    <footer id="footer">
-      <div class="container" style="background-color: #e00d0d53;">
-        <div class="row d-flex align-items-center">
-          
-         <div class="col"> 
-            <a class="link" href="{%url 'login' %}">
-              <img src="{% static 'portal/images/logofull.svg' %}" alt="logo" width="285" height="67,5">
-            </a>
-        </div>
-     
-
-<!-- 
-        <li class="sidenav-item">
-          <a class="nav-link" href="{% url 'employee_list' %}" >
-            <i class="fa fa-users" aria-hidden="true"></i>
-            <span> Сотрудники </span>
+       <div class="col-3"> 
+          <a class="link" href="{%url 'login' %}">
+            <img src="{% static 'portal/images/logofull.svg' %}" alt="logo" width="87" height="auto">
           </a>
-        </li> -->
+      </div>
 
-
-        <div class="col">
-        <ul class="social-links inline-flex my-0">
-          <li class="footer-icon">
-          <a href="https://web.telegram.org/k/#-1644306567">
-            <i class="fa-brands fa-telegram"></i>
-           </a> 
-          </li>
-          <li class="footer-icon">
-          <a href="https://vk.com/cso51"> 
-            <i class="fa-brands fa-vk"></i>
-           </a>
+      <div class="col-6  ">
+      <ul class="social-links list-group list-group-horizontal justify-content-center">
+         <li class="footer-icon">
+        <a href="https://web.telegram.org/k/#-1644306567">
+          <i class="fa-brands fa-telegram"></i>
+         </a> 
         </li>
         <li class="footer-icon">
-          <a href="https://www.youtube.com/channel/UCNlQgcbq32iCt_vbRK9Ouvg"> 
-            <i class="fa-brands fa-youtube"></i>
+        <a href="https://vk.com/cso51"> 
+          <i class="fa-brands fa-vk"></i>
+         </a>
+        </li>
+        <li class="footer-icon">
+        <a href="https://www.youtube.com/channel/UCNlQgcbq32iCt_vbRK9Ouvg"> 
+          <i class="fa-brands fa-youtube"></i>
         </a> 
-      </li>
-        </ul>
-        </div>
-        <div class="col copyright">
-          <p class="my-0">info@korund-s.ru</p>
-        </div>
-       </div>
+       </li> 
+      </ul>
       </div>
+      <div class="col-3 copyright">
+        <!-- <p class="my-0">info@korund-s.ru</p> -->
+        <p class="my-0"><a href="mailto:info@korund-s.ru">info@korund-s.ru</a></p>
+      </div>
+     </div>
+    </div>
+  
+  </footer>
     
-    </footer>
 
+    
       
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

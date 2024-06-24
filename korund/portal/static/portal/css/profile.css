@@ -8,18 +8,16 @@
     font-family: 'Roboto', sans-serif;
     /* font-family: 'Lato', sans-serif; */
 }
+/* НЕ ПОКАЗЫВАЕТ */
 body {
-    /* font-family: 'Roboto', sans-serif; */
     background-color: rgb(156,177,255);
     background: linear-gradient(0deg, rgba(156,177,255,1) 0%, rgba(193,245,255,1) 43%, rgba(254,254,254,1) 100%);
 }
-
 @media (max-width: 992px) {
     .body{
         min-width: 990px;
     }
 }
-
 
 
 /* Header */
@@ -42,32 +40,23 @@ body {
 
 
 
-/* Для настройки меню, Н */
-/* #insidenav{
-    border-radius: 25px;
-    border:none;
-    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
-    background: #ffffff;
-}  */
-/* #sidenav{
-background: #00eb3b; 
-} */
-/* конец */
-
-
-
-/* НАСТРОЙКИ МЕНЮ LASTVER, N */
+/* МУЧАЕМ МЕНЮ */
+.nav-link {
+    transition: background-color 0.3s ease;
+}
 a.nav-link{
     color: #000000;
-    transition: 0.5s ease; /* эффект перехода от прямоугольничков, Н */
 }
 a.nav-link:hover {
     background-color: #e4f0fe; /* Серое свечение при наведении */
     color: #000000;
-    border-radius: 25px;   
+    border-radius: 25px;
 }
 
 
+/* .sidenav-item {
+    padding: 0.5rem;
+} */
 /* РАБОТАЕТ */
 @media (max-width: 768px) {
     nav.nav {
@@ -85,89 +74,40 @@ a.nav-link:hover {
 
 
 
-/* 
-aside .sidebar a.active::before{
-    content: '';
-    
-    width: 6px;
-    height: 18px;
-    background-color: var(--color-primary);
-}
-
-aside .sidebar a.active span{
-    color: var(--color-primary);
-    margin-left: calc(1rem - 3px);
-}
-
-aside .sidebar a:hover{
-    color: var(--color-primary);
-} */
 
 
 
-
-/* Новости */
-.news-area .card{
+/* плитка с инфой о сотруднике*/
+.main-inner { 
+    background-color: white;
     border-radius: 25px;
-    border:none;
     box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+    border:none;
+    height: 425px;
     
 }
-
-/* или цвет границы */
-/* .news-area .card:hover{
-    background-color: #c34242;
-} */
-.news-area .card img{
+/* плитка с другими сотрудниками*/
+.other-employee {
+   /*  background-color: white;
     border-radius: 25px;
-}
-.news-area .card .card-body{
-    background: transparent; 
-}
-/* .news-area .card .card-body h3{
-    font-size: 16px;
-    font-weight: 600;
-} */
-.news-area .card .card-body p{
-    font-size: 16px;
-}
-.news-area .card .card-body span{
-    font-size: 12px;
-    color: rgb(35, 35, 35);
+    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+    margin-top:24px;
+    border:none; */
+   /*  height: 157p */x
 }
 
-/* .news-area .card .card-body h6{
-    font-size: 20px;
-} */
-/* .news-area .card .card-body a{
-    padding: 10px;
-    text-decoration: none;
-    background: #ffa500;
-    color: white;
-    border-radius: 5px;
-} */
-/*  @media (min-width:768) {
-    .news-one {
-    width: 20% !important;
-    float: left;
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-    }
+/* Персональная инфрмация оформление списка */
 
- } */
+dd:after{
+    clear:both;
+} 
+dd:before, ::after{
+    display: block;
+    content: " ";
+}
 
-.new-thumb a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 200px;
-}
-.new-thumb img{
-    max-width: 100%;
-    max-height: 100%;
-}
+
+
 
 
 /* Для календарь, Олеся добавила */
@@ -175,10 +115,7 @@ aside .sidebar a:hover{
     border-radius: 25px;
     border:none;
     box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
-    
-
 }
-
 .icon-container {
     display: flex;
     justify-content: center;
@@ -197,7 +134,69 @@ aside .sidebar a:hover{
     text-align: center;
 }
 
-/* Оформление футера LASTVER, Н */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* КАРУСЕЛЬ */
+.img-wrapper {
+    max-width: 100%;
+    height: 65vw;
+   /*  height: 20em; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media screen and (min-width:576px) {
+    .carousel-inner {
+        display: flex;
+    }
+    .carousel-item {
+        display: block;
+        margin-right: 0;
+        flex: 0 0 calc(100%/3);
+    }
+    .img-wrapper {
+        height: 23vw;
+    }
+}
+.carousel-inner {
+    padding: 1em;
+}
+.carousel-item.card {
+    margin: 0 .5em;
+    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+    
+}
+.carousel-control-prev .carousel-control-next{
+    width: 6vh;
+    height: 6vh;
+    background-color: #ff0808;
+    border-radius: 50%;
+    top: 50%;
+    transform: translate(-50%);
+    opacity: .5;
+}
+.carousel-control-prev:hover, .carousel-control-next:hover{
+    opacity: .8;
+}
+
+/* FOOTER */
 #footer{
     width: 100%;
     text-align: center;
@@ -212,4 +211,6 @@ aside .sidebar a:hover{
     color: rgb(0, 0, 0);
    /*  transition: 0.5s ease; */
 } 
+
+  
  
