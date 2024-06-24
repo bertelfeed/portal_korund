@@ -8,7 +8,7 @@
     <div class="employee-list">
         {% for employee in employees %}
             <div class="employee-item">
-                <img src="{{ employee.photo }}" alt="{{ employee.last_name }}">
+                <img src="{{ employee.photo.url }}" alt="{{ employee.last_name }}">
                 <h2>{{ employee.first_name }}{{ employee.last_name }}</h2>
                 <p>{{ employee.role }}</p>
             </div>

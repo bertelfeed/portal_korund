@@ -5,10 +5,17 @@ from django.contrib.auth.models import User
 from .models import News, Employee, Chat, Message
 
 def index(request):
+    # It would be better to add sorting by post date
+    # For example: News.objects.all().order_by("-created_at")
+    # See more: https://docs.djangoproject.com/en/5.0/ref/models/querysets/#django.db.models.query.QuerySet.order_by
+    # created_at = models.DateTimeField(auto_now_add=True, blank=False, null=False)
+    # See more: https://docs.djangoproject.com/en/5.0/ref/models/fields/#datetimefield
     news_list = News.objects.all()
     return render(request, 'portal/index.html', {'news_list': news_list})
 
 def register(request):
+    # Utilize django libraries, such as django-allauth for better experience 
+    # See more: https://docs.allauth.org/en/latest/
     if request.method == 'POST':
         username = request.POST.get('username')
         email = request.POST.get('email')
@@ -28,6 +35,8 @@ def register(request):
     return render(request, 'portal/register.html')
 
 def login_view(request):
+    # Utilize django libraries, such as django-allauth for better experience 
+    # See more: https://docs.allauth.org/en/latest/
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -41,6 +50,8 @@ def login_view(request):
 
 @login_required
 def profile(request):
+    # You can always get user instance on page context using global `user` variable
+    # See more: https://stackoverflow.com/questions/13713077/get-user-information-in-django-templates
     return render(request, 'portal/profile.html', {'user': request.user})
 
 @login_required
@@ -52,6 +63,10 @@ def dialog_list(request):
 def dialog_detail(request, chat_id):
     chat = get_object_or_404(Chat, id=chat_id)
     if request.method == 'POST':
+        # If you want to show off, you can use websockets
+        # Resources:
+        # https://channels.readthedocs.io/en/latest/
+        # https://github.com/django/daphne
         message_content = request.POST.get('message_content')
         Message.objects.create(chat=chat, employee=request.user.employee, message_content=message_content)
         return redirect('dialog_detail', chat_id=chat.id)

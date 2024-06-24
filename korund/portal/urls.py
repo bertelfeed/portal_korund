@@ -3,9 +3,9 @@ from django.urls import path
 from portal import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), # import admin urls !only! at the project root
     path('', views.login_view, name='login'),
-   path('index', views.index, name='index'),
+    path('index', views.index, name='index'),
     path('register/', views.register, name='register'),
     path('profile/', views.profile, name='profile'),
     path('dialogs/', views.dialog_list, name='dialog_list'),
