@@ -5,7 +5,7 @@
 {% block content %}
 <div class="container">
     <h1>Мессенджер</h1>
-    <div class="dialog-list">
+    <div class="dialog-list"style="background-color:red">
         {% for chat in chats %}
             <div class="dialog-item">
                 <h2><a href="{% url 'dialog_detail' chat.id %}">{{ chat.chat_name }}</a></h2>
@@ -15,3 +15,6 @@
     </div>
 </div>
 {% endblock %}
+
+
+    

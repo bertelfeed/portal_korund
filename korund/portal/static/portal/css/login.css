@@ -8,7 +8,7 @@
 /* Основные настройки для body */
 body {
     font-family: 'Roboto', sans-serif;
-    background: rgb(156,177,255);
+    background-color: rgb(156,177,255);
     background: linear-gradient(0deg, rgba(156,177,255,1) 0%, rgba(193,245,255,1) 43%, rgba(254,254,254,1) 100%);
 }
 
@@ -16,15 +16,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; /* центрирует дочерние элементы по вертикали */
-    min-height: 100vh; /* устанавливает минимальную высоту родительского элемента равной высоте экрана РАБОТАЕТ ЛИ?*/
+    min-height: 100vh; /* устанавливает минимальную высоту родительского элемента равной высоте экрана РАБОТАЕТ ЛИ?*/    
 }
 
 .box-sign-in { /* плитка основная */
-    border: thin; /* граница 1px,  */
     border-radius: 45px;
+    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
     background: rgba(255, 255, 255, 0.4);
-    /* backdrop-filter: blur(20px); */
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
     width: 930px;
 }
 
@@ -51,6 +49,9 @@ body {
 
 ::placeholder{
     font-size: 16px;
+}
+h2 {
+    align-items: center;
 }
 
 

@@ -12,264 +12,261 @@
     
     <title>{% block title %}Корунд{% endblock %}</title>
     
-
-    <script src="https://kit.fontawesome.com/d6b9e7e640.js" crossorigin="anonymous"></script><!-- Для иконок подключен font awesome, но мб лучше по-другому?-->
+    <!-- Для иконок подключен font awesome, но мб лучше по-другому?-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- <script src="https://kit.fontawesome.com/d6b9e7e640.js" crossorigin="anonymous"></script> -->
 </head>
-
+    
+    
 <body>
-    <!--------------------------- Header ---------------------------> 
-
-       <!--  <nav class="navbar navbar-expand-sm navbar-dark bg-primary"> --><!--автоматическое сворачиваемость на брекпойнте, цвет   , цвет-->
-       <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #ffffff;"><!-- сворачиваемость; навбар видно на усьройствах болше 576пикс, когда меньше он сворачивается цвет -->
-            <div class="container"><!-- Контейнер текста -->
-                <a class="navbar-brand me-auto" aria-current="page" href="{%url 'profile' %}"> <!-- Тутт дожно быть лого, размер поправить, переход по ссылке никуда?-->
-                    <img src="{% static 'portal/images/logofull.svg' %}" alt="logo" width="285" height="67,5">
-                </a>
-
-                <div class="navbar-nav ms-auto">
-                  <img src="{{ user.photo }}" alt="User">
-                  <span>{{ user.get_full_name }}</span>
-                  <a class="nav-link active" aria-current="page" href="{% url 'profile' %}">Личный кабинет</a><!-- личный кабинет -->
+  <!-- HEADER LASTVER, N.  нужно ли поставить медиа штуки? --> 
+  <header>
+    <nav class="navbar navbar-expand-sm" id="navbar">
+    <div class="container">
+      <div class="logo col-3 ">
+        <a class="navbar-brand d-flex justify-content-center" href="{%url 'index' %}" id="logo"> 
+          <img src="{% static 'portal/images/logofull.svg' %}" alt="logo" style=" width: 175px; height: auto; display: block;"> 
+          <!-- max-width: 175px;   min-width: 150px; -->
+        </a>
+      </div>
+      <div class="user col-3 d-flex justify-content-center">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'profile' %}"> 
+              <div class="d-flex align-items-center">
+                <div class="UserID-Badge me-2">
+                  <div class="UserID-Avatar UserID-Avatar_plus"><!-- Фото и имя пользоватлея из бд -->
+                    <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="UserID-Avatar-Image rounded-circle" style="width: 45px;" alt="Avatar" >
+                  </div>
                 </div>
-               <!-- НАСТРОИТЬ ПЕРЕХОД В ЛИЧНЫЙ КАБИНЕТ (которго нет), А НЕ НА ФОРМУ АВТОРИЗАЦИИ 
-               ПОДСТАНОВКА ИМЕНИ ПОЛЬЗОВАТЕЛЯ И ФОТО 
-               почему base двет проблемы, заменить адрес с лого
-                мб поменять логотп
-               -->
-          
-                  
-            </div>
-        </nav>
-          
-
-
-<!-- <header> Это пример стобы поближе бы
-        <div class="logo">
-            <img src="{% static 'portal/images/Logo 1.svg' %}" alt="Корунд">
-        </div>
-        <div class="user-info">
-            {% if user.is_authenticated %}
-                <img src="{{ user.photo }}" alt="User">
-                <span>{{ user.get_full_name }}</span>
-            {% else %}
-                <button class="btn" onclick="window.location.href='{% url 'login' %}'">Войти</button>
-                <button class="btn" onclick="window.location.href='{% url 'register' %}'">Зарегистрироваться</button>
-            {% endif %}
-        </div>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="{% url 'index' %}">Главная страница</a></li>
-            <li><a href="{% url 'profile' %}">Личный кабинет</a></li>
-            <li><a href="{% url 'dialog_list' %}">Мессенджер</a></li>
-            
-            <li><a href="{% url 'employee_list' %}">Сотрудники</a></li>
-        </ul>
-    </nav>
-    <main>
-       
-    </main>
-    <footer>
-        <p>&copy; 2024 Корунд</p>
-        <p><a href="mailto:info@korund-s.ru">info@korund-s.ru</a></p>
-    </footer> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   <!-- Основной контейнер -->
-        <!-- <div class="container mt-4">
-            <div class="row"> -->
-                <!-- Боковая панель - меню -->
-                <!-- <nav class="col-md-3 sticky-sidebar bg-light p-3">
-                    <h4>Меню</h4>
-                    <ul class="nav flex-column">
-                        <li class="nav-item"><a class="nav-link" href="#">Главная</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Новости</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Календарь</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Контакты</a></li>
-                    </ul>
-                </nav> -->
-
-                <!-- Блок с новостями -->
-                <!-- <div class="col-md-8">
-                    <h4>Новости</h4>
-                    <div class="row"> -->
-                        <!-- Пример новостных блоков -->
-                        <!-- <div class="col-md-6 news-item">
-                            <h5>Новость 1</h5>
-                            <p>Описание новости 1...</p>
-                        </div>
-                        <div class="col-md-6 news-item">
-                            <h5>Новость 2</h5>
-                            <p>Описание новости 2...</p>
-                        </div>
-                        <div class="col-md-6 news-item">
-                            <h5>Новость 3</h5>
-                            <p>Описание новости 3...</p>
-                        </div>
-                        <div class="col-md-6 news-item">
-                            <h5>Новость 4</h5>
-                            <p>Описание новости 4...</p>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- Календарь -->
-         <!--        <div class="col-md-1 sticky-sidebar bg-light p-3">
-                    <h4>Календарь</h4>
-                    <p>Свернутый календарь...</p>
-                </div>
-            </div>
-        </div> 
-      -->
-    <!--------------------------- Footer -------------ИКОНКИ! РАЗМЕР ЛОГО!-------------->
-
-        <nav class="navbar fixed-bottom navbar-expand-sm navbar-light" style="background-color: #ffffff;">
-        <div class="container d-flex justify-content-between align-items-center py-2"style="height: 80px;">
-          <div class="col-md-4 d-flex align-items-center">
-            <a href="/" class="logo">
-              <img src="{% static 'portal/images/logofull.svg' %}" width="285" height="67,5" alt="">
+                <span class="UserID-name">Имя пользователя</span>
+              </div>
             </a>
-          </div>
-          <!-- <a class="navbar-brand" href="#">
-              <img src="{% static 'portal/images/logofull.svg' %}" width="30" height="24" alt="">
-          </a> -->
-
+          </li>
+        </ul> 
+      </div>   
+    </div>
+    </nav>   
+  </header>
+  <!-- HEADER END -->
  
-          <!-- Сделвешь сама с ними, че там надо? -->
-          <!--В head подключен скрипт, отсюда можно брать коды для иконок https://fontawesome.com/search 
-          или скачать extension Bootstrap 5 & Font Awesome Snippets, 
-          для поиска иконок писть fa и выбирать из автопредложенных 
-          я надеюсь, это будет везде нормально отображаться-->
-            
+  <!--CONTENT AREA START -->
+  <section class="main-area" id="main-area">
+    <div class="container" >
+      <div class="row" style="margin-top: 30px;"><!-- Строка контента страницы -->
 
+        <div class="col-md-3 py-3 py-md-0" id="sidenav">
+          <!-- МУЧАЕМ МЕНЮЮЮЮЮЮЮ / почтиГОТОВО (специфично для этой страницы, Н)-->
+          <nav class="nav flex-column py-3 px-3" style="background-color: white; border-radius: 25px;">
 
-          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <i class="fa fa-youtube" aria-hidden="true"></i>
-            <i class="fa fa-vk" aria-hidden="true"></i>
-            <i class="fa fa-telegram" aria-hidden="true"></i>
-          </ul>
-
-          <span class="text-muted">info@korund-s.ru</span>
-
-
-          
-
-          
+            <ul class="nav d-flex flex flex-column h-100">
+                <li class="sidenav-item">
+                    <a class="nav-link active" style="background-color:#79a6f0; border-radius:25px; color:black" aria-current="page" href="#">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <span> Главная страница </span>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="nav-link" href="{% url 'profile' %}">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span> Личный кабинет </span>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="nav-link" href="{% url 'dialog_list' %}">
+                        <i class="fa fa-comment" aria-hidden="true"></i>
+                        <span> Мессенджер </span><!-- Страница в отключке -->
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <span> Календарь </span><!-- Доделать -->
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a class="nav-link" href="{% url 'employee_list' %}">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <span> Сотрудники </span>
+                    </a>
+                </li>
+                <li class="sidenav-item mt-auto" id="sign-out-element">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        <span> Выйти </span><!-- Добавить переход туда, куда выходим -->
+                    </a>
+                </li>
+            </ul>
+          </nav>
         </div>
-        </nav>
+          
+          
+
+
+        <!-- НОВОСТНОЙ БЛОК -->
+        <div class="col-md-8 py-3 py-md-0">
+          <section class="news-area" id="news-area">
+            <div class="container" style="background-color: rgb(255, 196, 0);">
+
+              <!----------------------- большая новость --------------------------->
+              <div class="row" style="height: 250px;">
+                  <div class="col-md-12 py-3 py-md-0">
+                    
+                    <div class="card h-100" style="background-color: #9BC4F4;">
+                      <img src="C:\Users\olesy\Downloads\photo.jpg" alt=""><!-- Фото из бд -->
+                    </div>
+                  </div>
+              </div>
+                
+
+                <!-- --------------------- маленькие новости ------------------------- -->  <!-- Фото и текст, дата из бд -->
+              <div class="row" style="margin-top: 30px;">
+
+                <div class="col-md-6 py-3 py-md-0 news-one">
+                  <div class="card px-3 pt-3">
+                      <img  src="https://plus.unsplash.com/premium_photo-1661580998017-8e6a23c1d60e?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                      <div class="card-body">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, doloribus!</p>
+                        <span>17 июня</span>
+                      </div>
+                  </div>
+                </div>
 
 
 
+
+
+                <div class="col-md-6 py-3 py-md-0 news-one">
+                  <div class="card px-3 pt-3">
+                      <img src="https://images.unsplash.com/photo-1598449356475-b9f71db7d847?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                      <div class="card-body">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, doloribus!</p>
+                        <span>16 июня</span>
+                      </div>
+
+                  </div>
+                </div>
+
+                <!-- <div class="col-md-4 py-3 py-md-0 news-one">
+                    <div class="card">
+                      <img src="{% static 'portal/images/mascot/Корумбек.png' %}" alt="">
+                      <div class="card-body">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, doloribus!</p>
+                        <span>15 июня</span>
+                      </div>
+
+                    </div>
+                </div>
+                 -->
+              </div>
+
+            
+                
+              <div class="row" style="margin-top: 30px;">
+                <div class="col-md-4 py-3 py-md-0 news-one">
+                    <li class="card px-3 pt-3">
+                      <div class="new-thumb">
+                        <a href="#"><img src="https://plus.unsplash.com/premium_photo-1661580998017-8e6a23c1d60e?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""> </a>
+                      </div>
+                        <div class="card-body">
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, doloribus!</p>
+                          <span>14 июня</span>
+                        </div>
+                    </li>
+                </div>
+
+                <div class="col-md-4 py-3 py-md-0 news-one">
+                  <div class="card px-3 pt-3">
+                      <img src="https://plus.unsplash.com/premium_photo-1661580998017-8e6a23c1d60e?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                      <div class="card-body">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, doloribus!</p>
+                        <span>13 июня</span>
+
+                      </div>
+
+                  </div>
+                </div>
+
+                <div class="col-md-4 py-3 py-md-0 news-one">
+                  <div class="card px-3 pt-3">
+                      <img src="https://plus.unsplash.com/premium_photo-1661580998017-8e6a23c1d60e?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                      <div class="card-body">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, doloribus!</p>
+                        <span>12 июня</span>
+
+                      </div>
+
+                  </div>
+                </div>
+                
+                  
+              </div>
+            </div>
+          </section>
+        </div>
+
+
+        <!----- КАЛЕНДАРЬ -----> <!-- круг выезжает за границы карточки -->
+        <div class="col-md-1 py-3 py-md-0">
+          <div class="card" id="calendar-card">
+            <div class="card-body px-0 d-flex flex-column justify-content-center align-items-center">
+              <div class="icon-container">
+                <i class="fa fa-calendar"></i>
+              </div>
+              <span class="vertical-text">Календарь</span>
+              
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+  <!--CONTENT AREA END -->
+
+  <footer id="footer">
+    <div class="container ">
+      <div class="row d-flex align-items-center">
         
+       <div class="col-3"> 
+          <a class="link" href="{%url 'login' %}">
+            <img src="{% static 'portal/images/logofull.svg' %}" alt="logo" width="87" height="auto">
+          </a>
+      </div>
 
-        
-
-        
-
-
-
-
+      <div class="col-6  ">
+      <ul class="social-links list-group list-group-horizontal justify-content-center">
+         <li class="footer-icon">
+        <a href="https://web.telegram.org/k/#-1644306567">
+          <i class="fa-brands fa-telegram"></i>
+         </a> 
+        </li>
+        <li class="footer-icon">
+        <a href="https://vk.com/cso51"> 
+          <i class="fa-brands fa-vk"></i>
+         </a>
+        </li>
+        <li class="footer-icon">
+        <a href="https://www.youtube.com/channel/UCNlQgcbq32iCt_vbRK9Ouvg"> 
+          <i class="fa-brands fa-youtube"></i>
+        </a> 
+       </li> 
+      </ul>
+      </div>
+      <div class="col-3 copyright">
+        <!-- <p class="my-0">info@korund-s.ru</p> -->
+        <p class="my-0"><a href="mailto:info@korund-s.ru">info@korund-s.ru</a></p>
+      </div>
+     </div>
+    </div>
+  
+  </footer>
     
 
-    <!----------------------- Content area --------------------------->
-
-    <!-- <div class="container"> -->
-
-        <!----------------------- Завернули ------------------------------>
-
-            <!-- <div class="row"> -->
-
-        <!----------------------- Боковое меню ---------------------------->
-
-                <!-- <div class="col-xl-3 sidebar">
-                    Боковое меню  
-                </div> -->  
-
-        <!----------------------- Центральная часть с новостями ------------------------------->
-
-                <!-- <div class="col-xl-8 main-box">
-                    Новости
-                </div> -->
-                
-        <!----------------------- Календарь ------------------------------->
-
-          <!--       <div class="col-xl-1 calendar">
-                    Календарь
-                </div>
-
-            </div>
-
-    </div> -->
-
-
-
-
-
-
-
-    <!-- <header>
-        <div class="logo">
-            <img src="{% static 'portal/images/Logo 1.svg' %}" alt="Корунд">
-        </div>
-        <div class="user-info">
-            {% if user.is_authenticated %}
-                <img src="{{ user.photo }}" alt="User">
-                <span>{{ user.get_full_name }}</span>
-            {% else %}
-                <button class="btn" onclick="window.location.href='{% url 'login' %}'">Войти</button>
-                <button class="btn" onclick="window.location.href='{% url 'register' %}'">Зарегистрироваться</button>
-            {% endif %}
-        </div>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="{% url 'index' %}">Главная страница</a></li>
-            <li><a href="{% url 'profile' %}">Личный кабинет</a></li>
-            <li><a href="{% url 'dialog_list' %}">Мессенджер</a></li>
-            
-            <li><a href="{% url 'employee_list' %}">Сотрудники</a></li>
-        </ul>
-    </nav>
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-    <footer>
-        <p>&copy; 2024 Корунд</p>
-        <p><a href="mailto:info@korund-s.ru">info@korund-s.ru</a></p>
-    </footer> -->
-
-    <!-- Для Bootstrap -->
-   
+    
+      
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
 
