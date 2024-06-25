@@ -4,14 +4,16 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import News, Employee, Chat, Message
 
-def index(request):
+""" def index(request):
     # It would be better to add sorting by post date
     # For example: News.objects.all().order_by("-created_at")
     # See more: https://docs.djangoproject.com/en/5.0/ref/models/querysets/#django.db.models.query.QuerySet.order_by
     # created_at = models.DateTimeField(auto_now_add=True, blank=False, null=False)
     # See more: https://docs.djangoproject.com/en/5.0/ref/models/fields/#datetimefield
     news_list = News.objects.all()
-    return render(request, 'portal/index.html', {'news_list': news_list})
+    return render(request, 'portal/index.html', {'news_list': news_list}) """
+
+
 
 def register(request):
     # Utilize django libraries, such as django-allauth for better experience 
@@ -49,10 +51,25 @@ def login_view(request):
     return render(request, 'portal/login.html')
 
 @login_required
+def index(request):
+    # It would be better to add sorting by post date
+    # For example: News.objects.all().order_by("-created_at")
+    # See more: https://docs.djangoproject.com/en/5.0/ref/models/querysets/#django.db.models.query.QuerySet.order_by
+    # created_at = models.DateTimeField(auto_now_add=True, blank=False, null=False)
+    # See more: https://docs.djangoproject.com/en/5.0/ref/models/fields/#datetimefield
+    news_list = News.objects.all()
+    return render(request, 'portal/index.html', {'news_list': news_list})
+
+@login_required
 def profile(request):
+    employees = Employee.objects.all()
     # You can always get user instance on page context using global `user` variable
     # See more: https://stackoverflow.com/questions/13713077/get-user-information-in-django-templates
-    return render(request, 'portal/profile.html', {'user': request.user})
+    return render(request, 'portal/profile.html', {'user': employees}) # This is kinda strange это для вызова почты """
+
+
+
+
 
 @login_required
 def dialog_list(request):
