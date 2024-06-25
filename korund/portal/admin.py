@@ -1,5 +1,10 @@
 from django.contrib import admin
-from .models import *
+from .models import * # never use asterisk import
+
+"""
+Make use of Django Admin Models
+See more: https://docs.djangoproject.com/en/5.0/ref/contrib/admin/
+"""
 
 admin.site.register(Topic)
 admin.site.register(Employee)

@@ -81,9 +81,20 @@ TEMPLATES = [
 WSGI_APPLICATION = 'korund.wsgi.application'
 
 
+# Media files settings
+# Additions: You can use whitenoise as file storage.
+# Read more: https://whitenoise.readthedocs.io/en/stable/index.html
+
+""" изменила """
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL = '/media/'
+
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
+# Better be using postgres backend?
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -114,9 +125,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# Set up time zones and internalization
+LANGUAGE_CODE = 'en-us' # for example: ru-ru
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'UTC' # for example: Europe/Moscow 
 
 USE_I18N = True
 
@@ -127,7 +139,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_DIRS = os.path.join(BASE_DIR, 'static')#""" изменила -- добавила  """
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]

@@ -1,5 +1,5 @@
-
-{% load static %}
+{% extends 'portal/base.html' %}
+<!-- {% load static %} -->
 
 
 <!DOCTYPE html>
@@ -22,37 +22,8 @@
     
     
 <body>
-  
-  <!-- NAVBAR START --> 
 
-  <header>
-    <nav class="navbar navbar-expand-sm" id="navbar">
-    <div class="container">
-      <a class="navbar-brand me-auto" href="{%url 'index' %}" id="logo"> 
-        <img src="{% static 'portal/images/logofull.svg' %}" alt="logo" style="max-width: 150px; width: 150px; min-width: 150px; height: auto; display: block;"> 
-      
-      </a>
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{%url 'profile' %}"> 
-              <div class="d-flex align-items-center">
-                <div class="UserID-Badge me-2">
-                  <div class="UserID-Avatar UserID-Avatar_plus"><!-- Фото из бд -->
-                    <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="UserID-Avatar-Image rounded-circle" style="width: 45px;" alt="Avatar" >
-                  </div>
-                </div>
-                <!-- <span class="UserID-name">Имя пользователя</span> --><!-- Имя пользователя из бд -->
-                <h2>{{ user.get_full_name }}</h2>
-              </div>
-            </a>
-          </li>
-        </ul>    
-    </div>
-    </nav>   
-  </header>
-
-  <!-- NAVBAR END -->
- 
+  {% block content %}
   <!--CONTENT AREA START -->
   <section class="main-area" id="main-area">
     <div class="container" style="background-color: brown;">
@@ -124,6 +95,8 @@
                           <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="UserID-Avatar-Image rounded-circle" style="width: 100px;" alt="Avatar" >
                         </div>
                       </div>
+                      <h2>{{ employee.first_name }}{{ employee.last_name }}</h2>
+                      <p>{{ employee.role }}</p>
                       <span class="UserID-name">Булкин Олег Валерьевич </span><!-- Имя пользователя из бд -->
                       <ul>
                         <li class="infoitem">
@@ -341,8 +314,44 @@
           </div>
         </div>
 
+        <span>{{ request.user }}</span><!-- РАБОЧИЙ ВАРИНТ ПОЛУЧИТЬ ИМЕЙЛ -->
 
 
+       
+    
+
+        {% for employee in employees %}
+        <div class="employee-item">
+           
+            <h2>{{ employee.first_name }}{{ employee.last_name }}</h2>
+            <p>{{ employee.role }}</p>
+        </div>
+    {% endfor %}
+
+        <div class="container">
+          <h1>Сотрудники</h1>
+          <div class="employee-list">
+              {% for employee in employees %}
+                  <div class="employee-item">
+                      <img src="{{ employee.photo.url }}" alt="{{ employee.last_name }}">
+                      <h2>{{ employee.first_name }}{{ employee.last_name }}</h2>
+                      <p>{{ employee.role }}</p>
+                  </div>
+              {% endfor %}
+          </div>
+      </div>
+
+      <h1>Сотрудники</h1>
+<p>Всего сотрудников: {{ employees|length }}</p>
+<div class="employee-list">
+    {% for employee in employees %}
+        <div class="employee-item">
+            <img src="{{ employee.photo.url }}" alt="{{ employee.last_name }}">
+            <h2>{{ employee.first_name }} {{ employee.last_name }}</h2>
+            <p>{{ employee.role }}</p>
+        </div>
+    {% endfor %}
+</div>
 
         
 
@@ -354,44 +363,8 @@
     </div>
   </section>
   <!--CONTENT AREA END -->
-
-  <footer id="footer">
-    <div class="container ">
-      <div class="row d-flex align-items-center">
-        
-       <div class="col-3"> 
-          <a class="link" href="{%url 'login' %}">
-            <img src="{% static 'portal/images/logofull.svg' %}" alt="logo" width="87" height="auto">
-          </a>
-      </div>
-
-      <div class="col-6  ">
-      <ul class="social-links list-group list-group-horizontal justify-content-center">
-         <li class="footer-icon">
-        <a href="https://web.telegram.org/k/#-1644306567">
-          <i class="fa-brands fa-telegram"></i>
-         </a> 
-        </li>
-        <li class="footer-icon">
-        <a href="https://vk.com/cso51"> 
-          <i class="fa-brands fa-vk"></i>
-         </a>
-        </li>
-        <li class="footer-icon">
-        <a href="https://www.youtube.com/channel/UCNlQgcbq32iCt_vbRK9Ouvg"> 
-          <i class="fa-brands fa-youtube"></i>
-        </a> 
-       </li> 
-      </ul>
-      </div>
-      <div class="col-3 copyright">
-        <!-- <p class="my-0">info@korund-s.ru</p> -->
-        <p class="my-0"><a href="mailto:info@korund-s.ru">info@korund-s.ru</a></p>
-      </div>
-     </div>
-    </div>
+  {% endblock %}
   
-  </footer>
     
 
     
