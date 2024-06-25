@@ -4,9 +4,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import News, Employee, Chat, Message
 
-def index(request):
+""" def index(request):
     news_list = News.objects.all()
-    return render(request, 'portal/index.html', {'news_list': news_list})
+    return render(request, 'portal/index.html', {'news_list': news_list}) """
 
 def register(request):
     if request.method == 'POST':
@@ -40,8 +40,20 @@ def login_view(request):
     return render(request, 'portal/login.html')
 
 @login_required
+def index(request):
+    news_list = News.objects.all()
+    return render(request, 'portal/index.html', {'news_list': news_list})
+
+@login_required
 def profile(request):
     return render(request, 'portal/profile.html', {'user': request.user})
+
+""" @login_required
+def profile(request):
+    employees = Employee.objects.all()
+    return render(request, 'portal/profile.html', {'employees': employees}) """
+
+
 
 @login_required
 def dialog_list(request):

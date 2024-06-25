@@ -170,16 +170,20 @@ aside .sidebar a:hover{
 }
 
 
-/* Для календарь, Олеся добавила */
-#calendar-card {
-    border-radius: 25px;
-    border:none;
-    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
-    
+/* КАЛЕНДАРЬ */
 
+.calendar-container {
+    background-color: white;
+    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+    border-radius: 25px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Ширина контейнера равна ширине колонки */
 }
 
-.icon-container {
+.icon-container { /* вылазит за пределы;настроить */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -187,15 +191,39 @@ aside .sidebar a:hover{
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    margin-bottom: 20px;
 }
-
 .vertical-text {
     writing-mode: vertical-rl;
     text-orientation: mixed;
     transform: rotate(180deg);
     text-align: center;
+    margin-top: 24px;
 }
+
+.col-md-1 {
+    flex: 0 0 auto;
+    max-width: 100px; /* Задаем фиксированную ширину */
+}
+@media (max-width: 768px) {
+    .col-md-1 {
+        max-width: 100%; /* Задаем 100% ширину при сжатии */
+    }
+    .calendar-container {
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .vertical-text {
+        writing-mode: horizontal-tb;
+        transform: none;
+        margin-top: 0;
+    }
+}
+/* КАЛЕНДАРЬ конец */
+
+
+
 
 /* Оформление футера LASTVER, Н */
 #footer{

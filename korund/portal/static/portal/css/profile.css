@@ -26,9 +26,7 @@ body {
     background: #ffffff;
    
 }
-
-
-.nav-item .nav-link{
+#navbar.nav-item .nav-link{
     font-size: 16px;
     font-weight: 550;
     color: black;
@@ -40,18 +38,18 @@ body {
 
 
 
-/* МУЧАЕМ МЕНЮ */
-.nav-link {
-    transition: background-color 0.3s ease;
-}
+
+/* НАСТРОЙКИ МЕНЮ LASTVER, N */
 a.nav-link{
     color: #000000;
+    transition: 0.5s ease; /* эффект перехода от прямоугольничков, Н */
 }
 a.nav-link:hover {
     background-color: #e4f0fe; /* Серое свечение при наведении */
     color: #000000;
-    border-radius: 25px;
+    border-radius: 25px;   
 }
+
 
 
 /* .sidenav-item {
@@ -110,13 +108,20 @@ dd:before, ::after{
 
 
 
-/* Для календарь, Олеся добавила */
-#calendar-card {
-    border-radius: 25px;
-    border:none;
+/* КАЛЕНДАРЬ */
+
+.calendar-container {
+    background-color: white;
     box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+    border-radius: 25px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Ширина контейнера равна ширине колонки */
 }
-.icon-container {
+
+.icon-container { /* вылазит за пределы;настроить */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,16 +129,36 @@ dd:before, ::after{
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    margin-bottom: 20px;
 }
-
 .vertical-text {
     writing-mode: vertical-rl;
     text-orientation: mixed;
     transform: rotate(180deg);
     text-align: center;
+    margin-top: 24px;
 }
 
+.col-md-1 {
+    flex: 0 0 auto;
+    max-width: 100px; /* Задаем фиксированную ширину */
+}
+@media (max-width: 768px) {
+    .col-md-1 {
+        max-width: 100%; /* Задаем 100% ширину при сжатии */
+    }
+    .calendar-container {
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .vertical-text {
+        writing-mode: horizontal-tb;
+        transform: none;
+        margin-top: 0;
+    }
+}
+/* КАЛЕНДАРЬ конец */
 
 
 
@@ -149,9 +174,10 @@ dd:before, ::after{
 
 
 /* КАРУСЕЛЬ */
+
 .img-wrapper {
-    max-width: 100%;
-    height: 65vw;
+    /* max-width: 100%;
+    height: 65vw; */
    /*  height: 20em; */
     display: flex;
     justify-content: center;
@@ -169,17 +195,19 @@ dd:before, ::after{
     .carousel-item {
         display: block;
         margin-right: 0;
-        flex: 0 0 calc(100%/3);
+        flex: 0 0 calc(100%/2);
     }
     .img-wrapper {
         height: 23vw;
     }
+
 }
+
 .carousel-inner {
     padding: 1em;
 }
 .carousel-item.card {
-    margin: 0 .5em;
+    /* margin: 0 .5em; */
     box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
     
 }
