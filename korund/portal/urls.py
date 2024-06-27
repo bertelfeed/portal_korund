@@ -5,9 +5,14 @@ from portal import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.login_view, name='login'),
+<<<<<<< HEAD
     path('index/', views.index, name='index'),
     path('register/', views.register, name='register'),
 
+=======
+   path('index', views.index, name='index'),
+    path('register/', views.register, name='register'),
+>>>>>>> master
     path('profile/', views.profile, name='profile'),
     
 

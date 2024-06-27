@@ -27,6 +27,7 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
+<<<<<<< HEAD
 <body>
   <!-- HEADER LASTVER --> 
   <header>
@@ -311,3 +312,19 @@
   <!-- <script src="{% static 'portal/js/bootstrap.min.js' %}"></script> -->
   <script src="{% static 'portal/js/calendar.js' %}"></script>
 </body>
+=======
+{% block content %}
+<div class="container">
+    <h1>Сотрудники</h1>
+    <div class="employee-list">
+        {% for employee in employees %}
+            <div class="employee-item">
+                <img src="{{ employee.photo }}" alt="{{ employee.last_name }}">
+                <h2>{{ employee.first_name }}{{ employee.last_name }}</h2>
+                <p>{{ employee.role }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+>>>>>>> master
