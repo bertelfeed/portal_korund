@@ -4,9 +4,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import News, Employee, Chat, Message
 
-def index(request):
+""" def index(request):
     news_list = News.objects.all()
-    return render(request, 'portal/index.html', {'news_list': news_list})
+    return render(request, 'portal/index.html', {'news_list': news_list}) """
 
 def register(request):
     if request.method == 'POST':
@@ -39,9 +39,46 @@ def login_view(request):
             return render(request, 'portal/login.html', {'error_message': 'Неправильное имя пользователя или пароль'})
     return render(request, 'portal/login.html')
 
+
+#news main page
 @login_required
+def index(request):
+    user = request.user
+    try:
+        employee = Employee.objects.get(email=user.email)
+    except Employee.DoesNotExist:
+        employee = None
+    news_list = News.objects.all()
+    return render(request, 'portal/index.html', {'employee': employee, 'news_list': news_list})
+
+#personal information
+""" @login_required
 def profile(request):
-    return render(request, 'portal/profile.html', {'user': request.user})
+    return render(request, 'portal/profile.html', {'user': request.user}) """
+
+""" @login_required
+def profile(request):
+    employees = Employee.objects.all()
+    return render(request, 'portal/profile.html', {'employees': employees}) """
+
+@login_required 
+def profile(request):
+    user = request.user
+    try:
+        employee = Employee.objects.get(email=user.email)
+    except Employee.DoesNotExist:
+        employee = None
+      
+    """  employees = Employee.objects.all()
+    try:
+        phone = Phone.objects.get(employee=employee)
+    except Phone.DoesNotExist:
+        phone = None
+         """
+    return render(request, 'portal/profile.html', {'employee': employee})
+
+
+
 
 @login_required
 def dialog_list(request):
@@ -58,7 +95,28 @@ def dialog_detail(request, chat_id):
     messages = Message.objects.filter(chat=chat)
     return render(request, 'portal/dialog_detail.html', {'chat': chat, 'messages': messages})
 
+
+#список сотрудников и хедер 
 @login_required
 def employee_list(request):
+    user = request.user
+    try:
+        employee = Employee.objects.get(email=user.email)
+    except Employee.DoesNotExist:
+        employee = None
     employees = Employee.objects.all()
-    return render(request, 'portal/employee_list.html', {'employees': employees})
+    return render(request, 'portal/employee_list.html', {'employees': employees, 'employee': employee})
+
+""" ДЛЯ страцниы новости """
+
+#вариант в котором номер статьи есть
+""" @login_required
+def article_detail(request, news_id):
+ article = get_object_or_404(News, id=news_id)
+ return render(request, 'portal/article_detail.html', {'article': article}) """
+
+#просто страница для верстки
+@login_required
+def article_detail(request):
+ article = News.objects.all()
+ return render(request, 'portal/article_detail.html', {'article': article})
