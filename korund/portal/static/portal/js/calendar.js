@@ -30,7 +30,7 @@ function init_calendar(date) {
     var today = date.getDate();
     // Set date to 1 to find the first day of the month
     date.setDate(1);
-    var first_day = date.getDay();
+    var first_day = (date.getDay()+6) % 7;
     // 35+firstDay is the number of date elements to be added to the dates table
     // 35 is from (7 days in a week) * (up to 5 rows of dates in a month)
     for(var i=0; i<35+first_day; i++) {
@@ -181,7 +181,7 @@ function show_events(events, month, day) {
     // If there are no events for this date, notify the user
     if(events.length===0) {
         var event_card = $("<div class='event-card'></div>");
-        var event_name = $("<div class='event-name'>There are no events planned for "+month+" "+day+".</div>");
+        var event_name = $("<div class='event-name'>Ни одного события на "+month+" "+day+".</div>");
         $(event_card).css({ "border-left": "10px solid #FF1744" });
         $(event_card).append(event_name);
         $(".events-container").append(event_card);
@@ -191,7 +191,7 @@ function show_events(events, month, day) {
         for(var i=0; i<events.length; i++) {
             var event_card = $("<div class='event-card'></div>");
             var event_name = $("<div class='event-name'>"+events[i]["occasion"]+":</div>");
-            var event_count = $("<div class='event-count'>"+events[i]["invited_count"]+" Invited</div>");
+            var event_count = $("<div class='event-count'>"+events[i]["invited_count"]+" Добавлено</div>");
             if(events[i]["cancelled"]===true) {
                 $(event_card).css({
                     "border-left": "10px solid #FF1744"
@@ -308,18 +308,18 @@ var event_data = {
 };
 
 const months = [ 
-    "January", 
-    "February", 
-    "March", 
-    "April", 
-    "May", 
-    "June", 
-    "July", 
-    "August", 
-    "September", 
-    "October", 
-    "November", 
-    "December" 
+    "Январь", 
+    "Февраль", 
+    "Mарт", 
+    "Апрель", 
+    "Май", 
+    "Июнь", 
+    "Июль", 
+    "Август", 
+    "Сентябрь", 
+    "Октябрь", 
+    "Ноябрь", 
+    "Декабрь" 
 ];
 
 })(jQuery);
