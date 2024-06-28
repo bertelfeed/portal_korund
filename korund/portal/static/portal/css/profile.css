@@ -1,3 +1,4 @@
+/* СТАРОЕ С БЭЙЗ */
 *{
     margin: 0;
     padding: 0;
@@ -6,78 +7,145 @@
     list-style: none;
     scroll-behavior: smooth;
     font-family: 'Roboto', sans-serif;
-}
-body {
+  }
+  body {
     background-color: rgb(156,177,255);
     background: linear-gradient(0deg, rgba(156,177,255,1) 0%, rgba(193,245,255,1) 43%, rgba(254,254,254,1) 100%);
-}
-
-@media (max-width: 992px) {
+  }
+  
+  @media (max-width: 992px) {
     .body{
         min-width: 990px;
     }
-}
-
-
-
-/* Header */
-#navbar{
+  }
+  
+  
+  
+  /* Header */
+  #navbar{
     box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
     background: #ffffff;
    
-}
-#navbar.nav-item .nav-link{
+  }
+  #navbar.nav-item .nav-link{
     font-size: 16px;
     font-weight: 550;
     color: black;
     letter-spacing: 1px;
     border-radius: 3px;
     transition: 0.5s ease;
-}
-
-
-
-
-
-
-/* НАСТРОЙКИ МЕНЮ LASTVER, N */
-a.nav-link{
+  }
+  
+  
+ 
+  /* НАСТРОЙКИ МЕНЮ LASTVER, N */
+  a.nav-link{
     color: #000000;
     transition: 0.5s ease; /* эффект перехода от прямоугольничков, Н */
-}
-a.nav-link:hover {
+  }
+  a.nav-link:hover {
     background-color: #e4f0fe; /* Серое свечение при наведении */
     color: #000000;
     border-radius: 25px;   
-}
-
-
-/* РАБОТАЕТ */
-@media (max-width: 768px) {
+  }
+  
+  
+  /* РАБОТАЕТ */
+  @media (max-width: 768px) {
     nav.nav {
         width: 100%;
         margin-bottom: 1rem;
         height: auto; /* Высота зависит от содержимого */
     }
-}
-
-@media (min-width: 768px) {
+  }
+  
+  @media (min-width: 768px) {
     nav.nav {
         height: 600px; /* Фиксированная высота для больших экранов */
     }
-}
+  }
+  
+  /* КАЛЕНДАРЬ */
+  .cal-container {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    border-radius: 25px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Ширина контейнера равна ширине колонки */
+  }
+  
+  .icon-container { /* вылазит за пределы;настроить */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #79a6f0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+  .vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    text-align: center;
+    margin-top: 24px;
+  }
+  
+  .col-md-1 {
+    flex: 0 0 auto;
+    max-width: 100px; /* Задаем фиксированную ширину */
+  }
+  @media (max-width: 768px) {
+    .col-md-1 {
+        max-width: 100%; /* Задаем 100% ширину при сжатии */
+    }
+    .cal-container {
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .vertical-text {
+        writing-mode: horizontal-tb;
+        transform: none;
+        margin-top: 0;
+    }
+  }
+  /* КАЛЕНДАРЬ конец */
+  
+  /* FOOTER */
+  #footer{
+    width: 100%;
+    text-align: center;
+    
+    background: #ffffff;
+    margin-top: 150px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .social-links i{
+    padding: 10px;
+    color: rgb(0, 0, 0);
+   /*  transition: 0.5s ease; */
+  } 
+  
+  /* СТАРОЕ С БЭЙЗ */
 
+  .info-container {
+    background-color:#ffffff;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
 
+  }
 
-
-
-
-
-
-
-
-
-
+  .card-profile,.card-personal_info,.card-aboutme {
+    background-color: transparent;
+    border-radius: 25px;
+    border:none;
+ }
 
 
 
@@ -127,56 +195,6 @@ dd:before, ::after{
 
 
 
-/* КАЛЕНДАРЬ */
-.calendar-container {
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
-    border-radius: 25px;
-    height: 240px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%; /* Ширина контейнера равна ширине колонки */
-}
-
-.icon-container { /* вылазит за пределы;настроить */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #79a6f0;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-}
-.vertical-text {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    transform: rotate(180deg);
-    text-align: center;
-    margin-top: 24px;
-}
-
-.col-md-1 {
-    flex: 0 0 auto;
-    max-width: 100px; /* Задаем фиксированную ширину */
-}
-@media (max-width: 768px) {
-    .col-md-1 {
-        max-width: 100%; /* Задаем 100% ширину при сжатии */
-    }
-    .calendar-container {
-        height: auto;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-    }
-    .vertical-text {
-        writing-mode: horizontal-tb;
-        transform: none;
-        margin-top: 0;
-    }
-}
-/* КАЛЕНДАРЬ конец */
 
 
 
@@ -198,25 +216,6 @@ dd:before, ::after{
 
 
 
-
-
-
-
-/* FOOTER */
-#footer{
-    width: 100%;
-    text-align: center;
-    
-    background: #f9f9f9;
-    margin-top: 150px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-}
-.social-links i{
-    padding: 10px;
-    color: rgb(0, 0, 0);
-   /*  transition: 0.5s ease; */
-} 
 
   
  

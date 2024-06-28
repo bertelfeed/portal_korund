@@ -17,6 +17,8 @@ class Employee(models.Model):
     birth_date = models.DateField(blank=True, null=True)
     hire_date = models.DateField()
     termination_date = models.DateField(blank=True, null=True)
+    """ depatrment = models.CharField(max_length=100) """ #РАССКОМЕНТИРОВАТЬ ПОСЛЕ ПОДКЛЮЧЕНИЯ БД
+  
 
 class Phone(models.Model):
     phone_number = models.CharField(max_length=20)
